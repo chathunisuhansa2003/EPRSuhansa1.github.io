@@ -4,84 +4,186 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Who We Do It For | Extended Producer Responsibility Pvt Ltd</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://eprs.lk/css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    /* ===== HEADER (Blue Background) ===== */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: #0a3d62; /* Blue navbar */
+  z-index: 1000;
+}
+.who-hero {
+  padding: 140px 0 100px;
+  background: linear-gradient(135deg, #d9edfb 0%, #36aef3 100%);
+  color: white;
+  text-align: center;
+}
+/* Navbar layout */
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+  padding: 0 20px;
+}
+/* Logo */
+.logo img {
+  height: 90px;
+}
+/* Desktop navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+/* ===== DESKTOP NAV SPACING FIX ===== */
+nav a {
+  margin: 0 12px;
+  padding: 8px 4px;
+  display: inline-block;
+}
+.contact-btn {
+  background: #34c759;
+  color: #ffffff;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+/* Hamburger menu */
+.menu-toggle {
+  display: none;
+  font-size: 2.2rem;
+  color: #ffffff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  nav {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    background: #0a3d62;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  }
+  nav.active {
+    max-height: 500px;
+  }
+  nav a {
+    display: block;
+    padding: 10px 10px;
+    font-size: 0.8rem;
+    transition: background 0.2s ease;
+  }
+  nav a:hover {
+    background: rgba(255,255,255,0.12);
+  }
+  .contact-btn {
+    margin: 15px;
+    display: block;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+/* ===== PIBO & INDUSTRIES SHARED CARD STYLES ===== */
+.pibo-section, .industries-section {
+  padding: 80px 0;
+  background: #f8fafc;
+  text-align: center;
+}
+.pibo-section h2, .industries-section h2 {
+  font-size: 2.5rem;
+  color: #0a3d62;
+  margin-bottom: 40px;
+}
+.pibo-grid, .industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.pibo-card, .industry-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 40px 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.pibo-card:hover, .industry-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+}
+.pibo-card h3, .industry-card h3 {
+  font-size: 1.65rem;
+  color: #0a3d62;
+  margin-bottom: 16px;
+}
+.pibo-card p, .industry-card p {
+  font-size: 1.05rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+.check-role-btn {
+  display: inline-block;
+  background: #34c759;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+.check-role-btn:hover {
+  background: #2ea043;
+  box-shadow: 0 5px 15px rgba(52,199,89,0.3);
+}
+.industry-card p {
+  min-height: 80px; /* helps alignment when descriptions vary */
+}
+</style>
 </head>
 <body>
 
-  <!-- Top Navigation (same as index.html) -->
-  <header class="top-nav">
-    <div class="container">
-      <div class="logo">
-        <div>
-  <img src="images/logo.jpg" 
-       alt="EPR - Extended Producer Responsibility Pvt Ltd" 
-       class="logo-img"
-       style="width: 250px; height: auto;">
-</div>
-      
-      </div>
-
-      <nav>
-        <ul>
-          <li><a href="what-we-do.html">What we do</a></li>
-          
-
-          <li><a href="who-we-do-it-for.html">Who we do it for</a></li>
-          <li class="dropdown">
-  <a href="why-we-do-it.html" class="dropbtn">
-    Why we do it <span class="arrow">▼</span>
-  </a>
-  <div class="dropdown-content">
-    <a href="#esg">ESG</a>                     <!-- or to section/page -->
-    <a href="#our-vision">Our vision</a>
-    <a href="#enabling-circular">Enabling the circular economy</a>
-    <a href="#awards">Awards</a>
-  </div>
-</li>
-          
-          <li class="dropdown">
-  <a href="discover.html" class="dropbtn">
-    Discover <span class="arrow">▼</span>
-  </a>
-  <div class="dropdown-content">
-    <a href="#">Our technology</a>
-    <a href="#">Locations</a>
-    <a href="#">Careers</a>
-    <a href="#">Case Studies</a>
-    <a href="#">News</a>
-    <a href="#">Blog</a>
-    <a href="#">Resources</a>
-  </div>
-</li>
-
-          
-        </ul>
-      </nav>
-
-      <div class="right-menu">
-       
-        <a href="contact.html" class="contact-btn">Contact us</a>
-        <a href="#" class="search">🔍</a>
+  <!-- HEADER -->
+  <header>
+    <div class="nav-wrapper">
+      <a href="index.html" class="logo">
+        <img src="images/logo.jpg" alt="EPR Logo">
+      </a>
+      <div>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <nav id="navbar">
+          <a href="index.html">Who we are</a>
+          <a href="what-we-do.html">What we do</a>
+          <a href="why-we-do-it.html">Why we do it</a>
+          <a href="who-we-do-it-for.html">Who we do it for</a>
+          <a href="discover.html">Discover</a>
+          <a href="contact.html" class="contact-btn">Contact us</a>
+        </nav>
       </div>
     </div>
   </header>
 
-  <!-- Hero / Banner Section -->
+  <!-- HERO -->
   <section class="who-hero">
     <div class="container">
-      <p></p>
-<br><br>
-<p></p>
-      <p></p>
-<br><br>
-<p></p>
-      <p></p>
-<br><br>
-<p></p>
-      <p></p>
-<br><br>
-<p></p>
+      <br><br>
       <h1>Building partnerships for<br>a more sustainable world</h1>
       <p class="hero-subtitle">
         We work in partnership with our customers to help them deliver their sustainability ambitions and embed circularity into their long-term business strategy.
@@ -89,14 +191,13 @@
     </div>
   </section>
 
-  <!-- Partnering Section -->
+  <!-- PARTNERING SECTION -->
   <section class="partnering-section">
     <div class="container">
       <h2>Partnering with thousands of businesses internationally</h2>
       <p class="intro">
         EPR has the depth and breadth of capabilities to support businesses with complex requirements and big ambitions. From supermarkets to fashion brands, consumer electronics, construction and more — across different geographical regions — we're helping big brands think circular.
       </p>
-
       <ul class="sectors-list">
         <li>Retail</li>
         <li>Grocery</li>
@@ -120,156 +221,202 @@
         <li>Shopping centres</li>
         <li>Service stations</li>
       </ul>
-
-      <a href="services.html" class="cta-button">Our services</a>
+      <a href="https://eprs.lk/services.html" class="cta-button">Our services</a>
     </div>
   </section>
 
-  <!-- Explore Our Work / Case Studies -->
-  <section class="explore-work">
+  <!-- PIBO SECTION -->
+  <section class="pibo-section">
     <div class="container">
-      <h2>Explore our work</h2>
-      <p>Supporting businesses of all sizes across many industries</p>
-
-      <div class="cases-grid">
-        <div class="case-card">
-          <div class="case-logo">
-            <!-- Replace with real logo image -->
-            <img src="...................................................." alt="ASOS">
-          </div>
-          <p>.................................................</p>
-          <a href="#" class="read-more">Read More →</a>
+      <h2>PIBO</h2>
+      <div class="pibo-grid">
+        <div class="pibo-card">
+          <h3>Product Owners</h3>
+          <p>Product owners are manufacturers responsible for the entire lifecycle of their products, including end-of-life management under EPR regulations to promote sustainability.</p>
+          <a href="product-owner.html" class="check-role-btn">Check Your Role</a>
         </div>
+        
+        <!-- Inside the PIBO section, Product Owners card -->
 
-        <div class="case-card">
-          <div class="case-logo">
-            <img src="........................................................" alt="Gymshark">
-          </div>
-          <p>..............................................</p>
-          <a href="#" class="read-more">Read More →</a>
+        <div class="pibo-card">
+          <h3>Brand Owners</h3>
+          <p>Brand owners manage products sold under their brand name, ensuring compliance with EPR by handling recycling and waste management for environmental responsibility.</p>
+          <a href="brand-owner.html" class="check-role-btn">Check Your Role</a>
         </div>
-
-        <div class="case-card">
-          <div class="case-logo">
-            <img src=".........................................................e" alt="Travelodge">
-          </div>
-          <p>...............................................................</p>
-          <a href="#" class="read-more">Read More →</a>
+        <div class="pibo-card">
+          <h3>Importers</h3>
+          <p>Importers bring products into the market and must adhere to EPR guidelines, taking accountability for the environmental impact of imported goods through proper disposal and recycling.</p>
+          <a href="importer.html" class="check-role-btn">Check Your Role</a>
         </div>
       </div>
     </div>
   </section>
-        <!-- Trusted by brands -->
-      <section class="trusted-brands">
-        <div class="container">
-          <h2>Trusted by the world's biggest brands</h2>
-          <div class="brands-carousel">
-            <!-- Replace with real logo URLs later; these are placeholders -->
-            <img src="https://via.placeholder.com/140x60/000/fff?text=Barratt" alt="Barratt">
-            <img src="https://via.placeholder.com/140x60/000/fff?text=Balfour+Beatty" alt="Balfour Beatty">
-            <img src="https://via.placeholder.com/140x60/000/fff?text=Wiggle" alt="Wiggle">
-            <img src="https://via.placeholder.com/140x60/000/fff?text=Co-op" alt="Co-op">
-            <img src="https://via.placeholder.com/140x60/000/fff?text=Morrisons" alt="Morrisons">
-            <img src="https://via.placeholder.com/140x60/000/fff?text=HP" alt="HP">
-            <!-- Add more as needed; you can make it scrollable with CSS or JS later -->
-          </div>
-        </div>
-      </section>
 
-      <!-- Scalable sustainability -->
-      <section class="scalable-sustainability">
-        <div class="container">
-          <h2>Scalable sustainability</h2>
-          <p>
-            We ensure sustainability is not only feasible, it's scalable. Our platform-based approach means we can scale up and down to different regional requirements, regulations, and market conditions. Explore the work we do with our partners on our <a href="#">Think Circular Awards page</a>.
-          </p>
-          <div class="scalable-image">
-            <img src="https://thumbs.dreamstime.com/b/showing-digital-finance-chart-rising-over-lakeside-green-dotted-plot-gridlines-arrow-investment-technology-analytics-402731935.jpg" alt="Scalable sustainability dashboard">
-          </div>
+  <!-- INDUSTRIES WE SERVE (replaced Explore our work) -->
+  <section class="industries-section">
+    <div class="container">
+      <h2>Industries We Serve</h2>
+      <p>We provide tailored EPR compliance and circular economy solutions across key sectors</p>
+      <div class="industries-grid">
+        <div class="industry-card">
+          <h3>Electrical and Electronic</h3>
+          <p>Supporting producers of appliances, IT equipment, lighting, and consumer electronics with full WEEE/E-waste compliance and responsible recycling.</p>
         </div>
-      </section>
+        <div class="industry-card">
+          <h3>Electronic Vehicles & Hybrid Batteries</h3>
+          <p>Specialized EPR services for EV and hybrid battery producers, covering collection, safe dismantling, and material recovery.</p>
+        </div>
+        <div class="industry-card">
+          <h3>Solar and Renewable Energy</h3>
+          <p>Helping solar panel, inverter, and renewable energy equipment producers meet end-of-life obligations and maximize material circularity.</p>
+        </div>
+        <div class="industry-card">
+          <h3>Medical</h3>
+          <p>Compliance solutions for medical device and healthcare product manufacturers, ensuring safe disposal of hazardous and non-hazardous waste.</p>
+        </div>
+        <div class="industry-card">
+          <h3>Chemical Industries</h3>
+          <p>Managing EPR for chemical packaging, containers, and hazardous substances with strict environmental and safety standards.</p>
+        </div>
+        <div class="industry-card">
+          <h3>Fabric and Garments</h3>
+          <p>Supporting textile and apparel brands with textile waste collection, recycling, and circular fashion initiatives.</p>
+        </div>
+        <div class="industry-card">
+          <h3>ICT</h3>
+          <p>End-to-end EPR support for computers, servers, mobile devices, networking equipment, and data center hardware producers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <!-- Thinking circular: knowledge and insight (updated) -->
-      <section class="knowledge-section updated">
-        <div class="container">
-          <h2>Thinking circular: knowledge and insight</h2>
-          <p>The latest news, insights, and thought leadership from across the circular economy space.</p>
-          <div class="insight-buttons">
-            <a href="#" class="insight-btn">News →</a>
-            <a href="#" class="insight-btn">Resources →</a>
-            <a href="#" class="insight-btn">Blog →</a>
-          </div>
-        </div>
-      </section>
 
-      <!-- Get in touch / Contact form -->
-      <section class="get-in-touch">
-        <div class="container">
-          <h2>Get in touch</h2>
-          <p>Please complete the details below and one of our team will contact you shortly.</p>
 
-          <form class="touch-form">
-            <div class="form-row">
-              <input type="text" placeholder="First Name*" required>
-              <input type="text" placeholder="Last Name*" required>
-            </div>
-            <div class="form-row">
-              <input type="text" placeholder="Company*" required>
-              <select required>
-                <option value="">Sector*</option>
-                <option>Retail</option>
-                <option>Manufacturing</option>
-                <option>Construction</option>
-                <option>Hospitality</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="form-row">
-              <input type="tel" placeholder="Phone*" required>
-              <input type="email" placeholder="Email Address*" required>
-            </div>
-            <textarea placeholder="Please add as much detail as possible about your question/issue. Product/service, waste requirements and dates?"></textarea>
-            <label class="privacy-check">
-              <input type="checkbox" required> I agree to the <a href="#">Privacy Policy</a>*
-            </label>
-            <button type="submit" class="submit-btn">Submit</button>
-          </form>
-        </div>
-      </section>
+  <!-- TRUSTED BY BRANDS -->
+  
+  <!--
+  <section class="trusted-brands">
+    <div class="container">
+      <h2>Trusted by the world's biggest brands</h2>
+      <div class="brands-carousel">
+        <img src="https://via.placeholder.com/140x60/000/fff?text=Barratt" alt="Barratt">
+        <img src="https://via.placeholder.com/140x60/000/fff?text=Balfour+Beatty" alt="Balfour Beatty">
+        <img src="https://via.placeholder.com/140x60/000/fff?text=Wiggle" alt="Wiggle">
+        <img src="https://via.placeholder.com/140x60/000/fff?text=Co-op" alt="Co-op">
+        <img src="https://via.placeholder.com/140x60/000/fff?text=Morrisons" alt="Morrisons">
+        <img src="https://via.placeholder.com/140x60/000/fff?text=HP" alt="HP">
+      </div>
+    </div>
+  </section>
+ 
+ -->
+  
+  
 
-  <!-- Footer (same as before, or copy from index.html) -->
-   <footer class="main-footer">
-        <div class="footer-content">
-          <div class="footer-logo">
-            Extended Producer Responsibility Pvt Ltd ○
-          </div>
-          <div class="footer-links">
-            <div class="link-group">
-              <h4>Useful links</h4>
-              <ul>
-                <li><a href="#">Legal</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Modern Slavery Statement</a></li>
-                <li><a href="#">Anti-bribery & Corruption Statement</a></li>
-              </ul>
-            </div>
-            <div class="link-group">
-              <h4>Why we do it</h4>
-              <ul>
-                <li><a href="#">Our Vision</a></li>
-              </ul>
-            </div>
-          </div>
+  <!-- SCALABLE SUSTAINABILITY -->
+  
+  <!--
+  <section class="scalable-sustainability">
+    <div class="container">
+      <h2>Scalable sustainability</h2>
+      <p>
+        We ensure sustainability is not only feasible, it's scalable. Our platform-based approach means we can scale up and down to different regional requirements, regulations, and market conditions. Explore the work we do with our partners on our <a href="#">Think Circular Awards page</a>.
+      </p>
+      <div class="scalable-image">
+        <img src="https://thumbs.dreamstime.com/b/showing-digital-finance-chart-rising-over-lakeside-green-dotted-plot-gridlines-arrow-investment-technology-analytics-402731935.jpg" alt="Scalable sustainability dashboard">
+      </div>
+    </div>
+  </section>
+
+-->
+  <!-- KNOWLEDGE SECTION -->
+  <section class="knowledge-section updated">
+    <div class="container">
+      <h2>Thinking circular: knowledge and insight</h2>
+      <p>The latest news, insights, and thought leadership from across the circular economy space.</p>
+      <div class="insight-buttons">
+        <a href="#" class="insight-btn">News →</a>
+        <a href="#" class="insight-btn">Resources →</a>
+        <a href="#" class="insight-btn">Blog →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GET IN TOUCH -->
+  <section class="get-in-touch">
+    <div class="container">
+      <h2>Get in touch</h2>
+      <p>Please complete the details below and one of our team will contact you shortly.</p>
+      <form class="touch-form">
+        <div class="form-row">
+          <input type="text" placeholder="First Name*" required>
+          <input type="text" placeholder="Last Name*" required>
         </div>
-        <div class="copyright">
-          © 2026 Extended Producer Responsibility Pvt Ltd. All rights reserved.
+        <div class="form-row">
+          <input type="text" placeholder="Company*" required>
+          <select required>
+            <option value="">Sector*</option>
+            <option>Retail</option>
+            <option>Manufacturing</option>
+            <option>Construction</option>
+            <option>Hospitality</option>
+            <option>Other</option>
+          </select>
         </div>
-      </footer>
-    
-    <div class="made-by">
-      @madebychathunisuhansa
+        <div class="form-row">
+          <input type="tel" placeholder="Phone*" required>
+          <input type="email" placeholder="Email Address*" required>
+        </div>
+        <textarea placeholder="Please add as much detail as possible about your question/issue. Product/service, waste requirements and dates?"></textarea>
+        <label class="privacy-check">
+          <input type="checkbox" required> I agree to the <a href="#">Privacy Policy</a>*
+        </label>
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        Extended Producer Responsibility Pvt Ltd ○
+      </div>
+      <div class="footer-links">
+        <div class="link-group">
+          <h4>Useful links</h4>
+          <ul>
+            <li><a href="#">Legal</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Modern Slavery Statement</a></li>
+            <li><a href="#">Anti-bribery & Corruption Statement</a></li>
+          </ul>
+        </div>
+        <div class="link-group">
+          <h4>Why we do it</h4>
+          <ul>
+            <li><a href="#">Our Vision</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      © 2026 Extended Producer Responsibility Pvt Ltd. All rights reserved.
     </div>
   </footer>
 
+  <div class="made-by">
+    chathunisuhansa6@gmail.com
+  </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById("menuToggle");
+  const navbar = document.getElementById("navbar");
+  menuToggle.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+  });
+});
+</script>
 </body>
 </html>

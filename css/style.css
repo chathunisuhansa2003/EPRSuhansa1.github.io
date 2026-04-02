@@ -19,7 +19,7 @@ body {
 /* ── Top Navigation ─────────────────────────────────────────────── */
 .top-nav {
   background-color: #0a3d62;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 20px 0;
   position: fixed;
   width: 100%;
@@ -124,7 +124,7 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: white;
+  color: rgb(255, 255, 255);
   padding-top: 90px;
 }
 
@@ -443,7 +443,7 @@ cite {
 /* ── Knowledge / Insights ───────────────────────────────────────── */
 .knowledge-section {
   padding: 100px 0;
-  background: linear-gradient(90deg, #a8cbe4, #014064);
+  background: linear-gradient(90deg, #a8cbe4, #37b6ff);
   color: white;
   text-align: center;
 }
@@ -641,7 +641,7 @@ textarea {
 /* ── Who We Do It For Page ──────────────────────────────────────── */
 .who-hero {
   padding: 140px 0 100px;
-  background: linear-gradient(135deg, #a3cdeb 0%, #009df8 100%);
+  background: linear-gradient(135deg, #d9edfb 0%, #36aef3 100%);
   color: white;
   text-align: center;
 }
