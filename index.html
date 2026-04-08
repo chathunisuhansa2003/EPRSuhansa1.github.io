@@ -1,259 +1,886 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Extended Producer Responsibility Pvt Ltd</title>
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #34c759;
-      --primary-dark: #2ea043;
-      --dark: #0a3d62;
-      --text: #1f2937;
-      --bg: #f8fafc;
-      --white: #ffffff;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: 
-        linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
-        url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&q=80&w=1600')
-        center/cover no-repeat;
-      color: var(--text);
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 0 20px;
-    }
-    /* ================= HEADER ================= */
-    header {
-      position: fixed;
-      width: 100%;
-      top: 0;
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      border-bottom: 1px solid #eee;
-    }
-    .nav-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 150px;
-    }
-    .logo img {
-      height:120px;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 30px;
-    }
-    nav a {
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: 500;
-    }
-    .contact-btn {
-      background: var(--primary);
-      color: white;
-      padding: 10px 22px;
-      border-radius: 6px;
-      font-weight: 600;
-    }
-    .menu-toggle {
-      display: none;
-      font-size: 2rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-    }
-    /* ================= HERO ================= */
-    .hero {
-      min-height: 100vh;
-      padding-top: 120px;
-      background:
-        linear-gradient(rgba(10,61,98,0.75), rgba(10,61,98,0.75)),
-        url('https://images.unsplash.com/photo-1581092160560-1c1e428e2d8c?auto=format&fit=crop&q=80&w=1600')
-        center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      color: white;
-    }
-    .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-      font-weight: 800;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 800px;
-      margin: 0 auto 40px;
-    }
-    .hero-tabs {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-bottom: 40px;
-    }
-    .hero-tab {
-      background: rgba(255,255,255,0.2);
-      border: 1px solid rgba(255,255,255,0.3);
-      padding: 14px 32px;
-      border-radius: 40px;
-      color: white;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    .hero-tab:hover {
-      background: var(--primary);
-    }
-    .cta-button {
-      display: inline-block;
-      background: var(--primary);
-      padding: 16px 48px;
-      border-radius: 10px;
-      color: white;
-      font-size: 1.2rem;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    /* ================= NEW STATEMENT BOX ================= */
-    .statement-box {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      padding: 60px 40px;
-      max-width: 800px;
-      margin: 80px auto;
-      text-align: center;
-    }
-    .statement-box h2 {
-      font-size: 2.8rem;
-      color: var(--dark);
-      margin-bottom: 24px;
-    }
-    .statement-box p {
-      font-size: 1.15rem;
-      color: #4b5563;
-      margin-bottom: 40px;
-      max-width: 640px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .ewaste-btn {
-      display: inline-block;
-      background: var(--primary);
-      color: white;
-      padding: 16px 48px;
-      border-radius: 50px;
-      font-size: 1.25rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-    .ewaste-btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(52,199,89,0.3);
-    }
-    /* ================= SECTION (generic) ================= */
-    section {
-      padding: 100px 0;
-      text-align: center;
-      background: white;
-    }
-    section h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: var(--dark);
-    }
-    section p {
-      max-width: 700px;
-      margin: auto;
-      margin-bottom: 30px;
-      font-size: 1.1rem;
-    }
-    .btn-primary {
-      background: var(--primary);
-      color: white;
-      padding: 14px 36px;
-      border-radius: 6px;
-      font-weight: 600;
-      text-decoration: none;
-    }
-    /* ================= FOOTER ================= */
-    footer {
-      background: #0a3d62;
-      color: white;
-      padding: 50px 0;
-      text-align: center;
-    }
-    .made-by {
-      text-align: center;
-      font-size: 11px;
-      color: #a0a0a0;
-      margin-top: 20px;
-      padding-bottom: 20px;
-      opacity: 0.7;
-      letter-spacing: 0.3px;
-    }
-    .made-by:hover {
-      color: #34c759;
-      opacity: 1;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Extended Producer Responsibility Pvt Ltd</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--primary:#34c759;
+--primary-dark:#2ea043;
+--dark:#0a3d62;
+--text:#1f2937;
+--bg:#f8fafc;
+
+  --shadow: 0 10px 30px rgba(0,0,0,0.08);
+  --transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.6;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
+
+/* HEADER */
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(255,255,255,0.95);
+backdrop-filter:blur(10px);
+border-bottom:1px solid #eee;
+z-index:1000;
+}
+
+.nav-wrapper{
+display:flex;
+align-items:center;
+justify-content:space-between;
+height:90px;
+}
+
+.logo img{
+height:100px;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:28px;
+}
+
+nav a{
+text-decoration:none;
+color:var(--dark);
+font-weight:500;
+position:relative;
+}
+
+nav a::after{
+content:'';
+position:absolute;
+bottom:-6px;
+left:0;
+width:0%;
+height:2px;
+background:var(--primary);
+transition:0.3s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+.contact-btn{
+background:var(--primary);
+color:white;
+padding:10px 20px;
+border-radius:6px;
+font-weight:600;
+}
+
+.menu-toggle{
+display:none;
+font-size:28px;
+background:none;
+border:none;
+cursor:pointer;
+}
+
+/* GALLERY BUTTON */
+.gallery-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #34c759, #2ea043);
+  color: white;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(52, 199, 89, 0.3);
+}
+
+.gallery-button:hover {
+  background: linear-gradient(135deg, #2ea043, #28a745);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(52, 199, 89, 0.4);
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+padding-top:120px;
+background:
+linear-gradient(rgba(10,61,98,0.75),rgba(10,61,98,0.75)),
+url('https://images.unsplash.com/photo-1470115636492-6d2b56f9146d?auto=format&fit=crop&q=80&w=1600')
+center/cover no-repeat;
+display:flex;
+align-items:center;
+text-align:center;
+color:white;
+animation:heroZoom 20s ease-in-out infinite alternate;
+}
+
+.hero h1{
+font-size:clamp(2.5rem,6vw,4rem);
+font-weight:800;
+margin-bottom:20px;
+opacity:0;
+animation:slideUp 1s ease forwards;
+}
+
+.hero p{
+max-width:750px;
+margin:auto;
+margin-bottom:40px;
+font-size:1.2rem;
+opacity:0;
+animation:slideUp 1s ease forwards;
+animation-delay:0.4s;
+}
+
+.hero-tabs{
+margin-bottom:40px;
+opacity:0;
+animation:slideUp 1s ease forwards;
+animation-delay:0.7s;
+}
+
+.hero-tab{
+display:inline-block;
+padding:14px 32px;
+border-radius:40px;
+background:rgba(255,255,255,0.2);
+border:1px solid rgba(255,255,255,0.4);
+color:white;
+font-weight:600;
+text-decoration:none;
+}
+
+.hero-tab:hover{
+background:var(--primary);
+}
+
+.cta-button{
+display:inline-block;
+background:linear-gradient(135deg,#34c759,#2ea043);
+padding:16px 48px;
+border-radius:10px;
+color:white;
+font-size:1.2rem;
+font-weight:600;
+text-decoration:none;
+transition:0.3s;
+opacity:0;
+animation:slideUp 1s ease forwards;
+animation-delay:1s;
+}
+
+.cta-button:hover{
+transform:translateY(-4px);
+box-shadow:0 12px 30px rgba(0,0,0,0.3);
+}
+
+/* STATEMENT BOX */
+
+.statement-box{
+background:white;
+padding:60px 40px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+max-width:800px;
+margin:80px auto;
+text-align:center;
+}
+
+.statement-box h2{
+font-size:2.6rem;
+margin-bottom:20px;
+color:var(--dark);
+}
+
+.statement-box p{
+font-size:1.1rem;
+color:#4b5563;
+margin-bottom:35px;
+}
+
+.ewaste-btn{
+display:inline-block;
+background:var(--primary);
+padding:15px 40px;
+border-radius:40px;
+color:white;
+font-weight:700;
+text-decoration:none;
+transition:0.3s;
+}
+
+.ewaste-btn:hover{
+background:var(--primary-dark);
+transform:translateY(-3px);
+}
+
+/* FEATURES */
+
+.features{
+background:#f1f5f9;
+padding:100px 0;
+text-align:center;
+}
+
+.features h2{
+font-size:2.4rem;
+margin-bottom:20px;
+color:var(--dark);
+}
+
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-top:40px;
+}
+
+.feature-card{
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+transition:0.4s;
+opacity:0;
+transform:translateY(40px);
+}
+
+.feature-card:hover{
+transform:translateY(-8px);
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+.feature-card h3{
+margin-bottom:12px;
+color:#0a3d62;
+}
+
+
+
+
+
+/* FOOTER */
+
+.main-footer{
+background:#0f172a;
+color:white;
+padding:60px 0 20px;
+}
+
+.footer-content{
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:40px;
+margin-bottom:40px;
+}
+
+.link-group ul{
+list-style:none;
+}
+
+.link-group a{
+color:#cbd5e1;
+text-decoration:none;
+line-height:2;
+}
+
+.link-group a:hover{
+color:white;
+}
+
+.copyright{
+text-align:center;
+border-top:1px solid #334155;
+padding-top:25px;
+color:#94a3b8;
+font-size:0.9rem;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+
+nav{
+display:none;
+position:absolute;
+top:90px;
+left:0;
+width:100%;
+background:white;
+}
+
+nav.active{
+display:block;
+}
+
+nav ul{
+flex-direction:column;
+padding:20px;
+gap:20px;
+}
+
+.footer-content{
+grid-template-columns:1fr;
+}
+
+}
+
+/* ANIMATIONS */
+
+@keyframes slideUp{
+0%{
+opacity:0;
+transform:translateY(40px);
+}
+100%{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes heroZoom{
+0%{
+background-size:100%;
+}
+100%{
+background-size:110%;
+}
+}
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* HERO */
+.page-hero {
+  padding: 160px 0 120px;
+  background: linear-gradient(135deg, var(--dark) 0%, var(--dark-light) 100%);
+  color: black;
+  text-align: center;
+}
+
+.page-hero h1 {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 800;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.page-hero p.lead {
+  font-size: 1.45rem;
+  max-width: 880px;
+  margin: 0 auto;
+  opacity: 0.92;
+}
+
+/* WHY SECTION */
+.why-section {
+  padding: 100px 0 140px;
+  background:
+  linear-gradient(rgba(255,255,255,0.95),rgba(255,255,255,0.95)),
+  url('https://images.unsplash.com/photo-1508780709619-79562169bc64?auto=format&fit=crop&q=80&w=1600')
+  center/cover no-repeat;
+}
+
+.why-section h1,
+.why-section h2 {
+  color: var(--dark);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+}
+
+.why-section h1 {
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.why-section h2 {
+  font-size: clamp(2rem, 4.5vw, 2.8rem);
+  position: relative;
+  display: inline-block;
+  margin: 80px auto 2rem;
+}
+
+.why-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 5px;
+  background: var(--primary);
+  border-radius: 3px;
+}
+
+.lead-text {
+  font-size: 1.32rem;
+  color: var(--text-light);
+  max-width: 920px;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+
+.block {
+  margin: 60px 0;
+  padding: 48px 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.block:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.block p {
+  font-size: 1.18rem;
+  color: var(--text-light);
+  margin-bottom: 1.6rem;
+}
+
+.highlight {
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.stats {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin: 1.5rem 0 0.8rem;
+}
+
+.stats small {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  display: block;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 2.5rem;
+  background: var(--primary);
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: 16px 48px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px){
+  .page-hero { padding: 120px  80px; }
+  .page-hero h1 { font-size: 2.8rem; }
+}
+
+
+
+
+/* FIXED RESPONSIVE BLOCKS */
+
+.custom-block {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 40px;
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  overflow: hidden; /* 🔥 prevents overflow */
+}
+
+.custom-block img {
+  flex: 1 1 300px;
+  max-width: 50%;
+  width: 50%;        /* 🔥 key fix */
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.custom-block div {
+  flex: 2 1 200px;
+  min-width: 0; /* 🔥 prevents overflow */
+}
+
+.text-center {
+  text-align: center;
+}
+
+.stats-box {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 20px 0;
+}
+
+.stats-box small {
+  display: block;
+  font-size: 1rem;
+  color: #555;
+}
+
+.big-btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: linear-gradient(135deg, #34c759, #28a745);
+  color: white;
+  padding: 16px 30px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+
+  .custom-block {
+    flex-direction: column; /* 🔥 stack properly */
+    padding: 20px;
+  }
+
+  .custom-block img {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .custom-block div {
+    width: 100%;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
 </head>
+
 <body>
-  <header>
-    <div class="nav-wrapper container">
-      <div class="logo"><img src="logo.png" alt="Company Logo"></div>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-      <a href="#" class="contact-btn">Get in Touch</a>
-    </div>
-  </header>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Building a Sustainable Future</h1>
-      <p>We help organizations meet their Extended Producer Responsibility goals by managing e-waste responsibly.</p>
-      <div class="hero-tabs">
-        <a href="#" class="hero-tab">Recycling</a>
-        <a href="#" class="hero-tab">Compliance</a>
-        <a href="#" class="hero-tab">Sustainability</a>
-      </div>
-      <a href="#" class="cta-button">Learn More</a>
-    </div>
-  </section>
 
-  <div class="statement-box">
-    <h2>Our Mission</h2>
-    <p>To create a cleaner, greener environment by ensuring responsible recycling and disposal of electronic waste.</p>
-    <a href="#" class="ewaste-btn">Recycle Now</a>
+
+
+
+<header>
+  <div class="container nav-wrapper">
+    <a href="index.html" class="logo">
+      <img src="images/logo.jpg" alt="EPR Logo">
+    </a>
+    <button class="menu-toggle">☰</button>
+    <nav>
+      <ul>
+        <li><a href="index.html">Who we are</a></li>
+        <li><a href="what-we-do.html">What we do</a></li>
+        <li><a href="why-we-do-it.html">Why we do it</a></li>
+        <li><a href="who-we-do-it-for.html">Who we do it for</a></li>
+        <li><a href="https://dumidu.vercel.app">E-Portal</a></li>
+        <li><a href="contact.html" class="contact-btn">Contact us</a></li>
+      </ul>
+    </nav>
   </div>
+</header>
 
-  <footer>
-    <p>&copy; 2026 Extended Producer Responsibility Pvt Ltd</p>
-    <div class="made-by">Designed with care for sustainability</div>
-  </footer>
+
+
+
+
+
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>Who We Are</h1>
+    <p>Making the transition from a linear economy to a circular economy practical and profitable.</p>
+    <!--
+    <div class="hero-tabs">
+      <a href="ewaste.html" class="hero-tab">EPR for E-Waste</a>
+    </div>
+    -->
+    
+    <a href="services.html" class="cta-button">See our services</a>
+  </div>
+</section>
+<!--
+<section class="page-hero">
+  <div class="container">
+    <h1>For Waste</h1>
+    <p class="lead">
+      Transforming waste into resources – sustainable, compliant, and valuable.
+    </p>
+  </div>
+</section>
+-->
+
+
+<section class="why-section">
+  <div class="container">
+
+    <h1>EPR For Ewaste</h1>
+
+    <!-- Block 1 -->
+<div class="custom-block">
+  <img src="https://images.unsplash.com/photo-1528323273322-d81458248d40" alt="Circular Economy Sri Lanka">
+  <div>
+    <h2>Leader in Circularity in Sri Lanka</h2>
+    <p>Island-wide collection network operated through trusted partners across Sri Lanka.</p>
+    <p>Extended Producer Responsibility Pvt Ltd blends technology with a skilled workforce to help businesses reduce waste and adopt circular practices.</p>
+    <p>We support companies in shifting from the traditional linear “take make waste” model to a circular economy where growth is decoupled from resource use.</p>
+    <p>We make circularity practical, scalable, and full of opportunity.</p>
+  </div>
+</div>
+
+<!-- Block 2 -->
+<div class="custom-block">
+  <img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1" alt="Sustainability Network">
+  <div>
+    <h2>Closing Circularity Gaps in Sri Lanka</h2>
+    <p>Our vision is to become Sri Lanka’s first and most trusted leader in Extended Producer Responsibility (EPR).</p>
+    <p>With specialist operations and partners across the country, EPR Ltd helps businesses adopt circular economy practices that reduce waste, recover value, and keep materials in use for longer.
+We deliver a unified circular model tailored for Sri Lanka, built around three core service areas—our ‘loops’—that enable scalable, responsible, and future ready resource management.
+</p>
+  </div>
+</div>
+
+<!-- Block 3 -->
+<div class="custom-block text-center">
+  <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231" alt="Circularity Data">
+  <div>
+    <h2>What is the circularity gap?</h2>
+    <div class="stats-box">
+      6.9% 
+      <small>of resources are kept in use each year</small>
+    </div>
+    <p>Over 90% are wasted or lost — highlighting the need for circular systems.</p>
+    <p>With specialist operations and partners across the country, EPR Ltd helps businesses adopt circular economy practices that reduce waste, recover value, and keep materials in use for longer.
+We deliver a unified circular model tailored for Sri Lanka, built around three core service areas—our ‘loops’—that enable scalable, responsible, and future ready resource management.
+</p>
+
+    <a href="whyitmatters.html" class="big-btn">Why it Matters</a>
+  </div>
+</div>
+
+    <div style="text-align:center; margin-bottom:40px;">
+      <a href="services.html" style="display:inline-block; background:linear-gradient(135deg, #34c759 0%, #28a745 100%); color:#fff; padding:18px 40px; font-weight:700; font-size:1.25rem; border-radius:12px; text-decoration:none; transition:0.3s;">Discover Our Circular Solutions</a>
+    </div>
+
+  </div>
+</section>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+<div class="statement-box">
+
+<h2>Our Statements</h2>
+
+<p>
+We are committed to building practical, scalable solutions that help producers take responsibility for their products — turning environmental obligations into business opportunities in the circular economy.
+</p>
+
+<a href="#" class="ewaste-btn">E-Waste</a>
+
+</div>
+
+
+<section class="features">
+
+<div class="container">
+
+<h2>What We Focus On</h2>
+
+<div class="feature-grid">
+
+<div class="feature-card">
+<h3>E-Waste Management</h3>
+<p>Helping companies responsibly collect and recycle electronic waste through efficient EPR systems.</p>
+</div>
+
+<div class="feature-card">
+<h3>Circular Economy</h3>
+<p>Turning waste into value through innovative recycling and sustainable production strategies.</p>
+</div>
+
+<div class="feature-card">
+<h3>Producer Compliance</h3>
+<p>Supporting producers to meet environmental regulations while creating long-term business value.</p>
+</div>
+
+</div>
+<br>
+<br>
+
+</div>
+
+</section>
+<section id="contact" style="text-align:center; padding:50px; background:#f5f5f5;">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or inquiries, please fill out our contact form.</p>
+    
+    <a href="gallery.html" class="gallery-button">View Our Gallery</a>
+    
+    <a href="https://forms.gle/4Bp47qutKri5UJ3d8" target="_blank">
+        <button style="padding:12px 25px; font-size:16px; background:#007BFF; color:white; border:none; border-radius:5px; cursor:pointer;">
+            Open Contact Form
+        </button>
+    </a>
+</section>
+    
+
+<footer class="main-footer">
+
+<div class="container">
+
+<div class="footer-content">
+
+<div>
+<img src="images/logo.jpg" style="width:180px;margin-bottom:10px;">
+<p>Extended Producer Responsibility Pvt Ltd</p>
+</div>
+
+<div class="link-group">
+<h4>Useful Links</h4>
+<ul>
+<li><a href="#">Legal</a></li>
+<li><a href="#">Privacy Policy</a></li>
+<li><a href="#">Modern Slavery Statement</a></li>
+</ul>
+</div>
+
+<div class="link-group">
+<h4>Why we do it</h4>
+<ul>
+<li><a href="#">Our Vision</a></li>
+</ul>
+</div>
+
+</div>
+
+<div class="copyright">
+© 2026 Extended Producer Responsibility Pvt Ltd
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+const toggle=document.querySelector('.menu-toggle');
+const nav=document.querySelector('nav');
+
+toggle.addEventListener('click',()=>{
+nav.classList.toggle('active');
+});
+
+const cards=document.querySelectorAll('.feature-card');
+
+window.addEventListener('scroll',()=>{
+
+const trigger=window.innerHeight*0.85;
+
+cards.forEach(card=>{
+const top=card.getBoundingClientRect().top;
+
+if(top<trigger){
+card.style.opacity="1";
+card.style.transform="translateY(0)";
+}
+
+});
+
+});
+
+</script>
+
 </body>
 </html>
+
